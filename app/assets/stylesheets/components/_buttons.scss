@@ -1,0 +1,14 @@
+.btn-boat-primary {
+  color: white;
+  border-radius: 6px;
+  background-color: #119DA4;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.btn-boat-primary:hover {
+  transition-duration: 0.5s;
+  transition: border-radius;
+  border-radius: 25px;
+  background-color: #19647E;
+}
