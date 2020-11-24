@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+.hero_boat {
+  background-image: url(https://www.dreamyachtcharter.com/wp-content/uploads/2019/04/bali4-1-ext-av.jpg);
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero_boat h2 {
+  color: white;
+}
