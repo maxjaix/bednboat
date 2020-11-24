@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Add a new boat</h2>
+
+  <%= simple_form_for [ @user, @boat ] do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :title,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "first name" } %>
+      <%= f.input :description,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "last name" } %>
+      <%= f.input :photo, as: :file %> 
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Submit a new boat" %>
+    </div>
+  <% end %>
+ </div>
+
