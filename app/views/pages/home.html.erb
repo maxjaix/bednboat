@@ -39,13 +39,13 @@
   <div class="all_boats col-lg-12">
     <div class="row">
       <div class="col-4">
-        <% @boats.each do |boat| %>
+        <% @boats.limit(3).each do |boat| %>
         <div class="card">
-          <%= image_tag "barque.jpg", alt: "alttext", class: "card-img-top" %>
+          <%= cl_image_tag boat.photo.key, alt: "alttext", class: "card-img-top" %>
           <div class="card-body">
             <h5 class="card-title"><%= boat.title %></h5>
             <p class="card-text"><%= boat.description %></p>
-            <%#= link_to "Louer ce bateau", class: "btn btn-primary" %>
+            <%= link_to "Louer ce bateau", class: "btn btn-primary" %>
           </div>
         </div>
         <% end %>
