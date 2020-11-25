@@ -23,9 +23,17 @@
 }
 
 .all_boats .card {
-  text-align: justify;
   height: 500px;
-  overflow: hidden;
+}
+
+.all_boats .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.all_boats .card-text {
+  border-color: lightgray;
 }
 
 .all_boats .card-img-top {

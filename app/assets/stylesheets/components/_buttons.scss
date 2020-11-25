@@ -1,14 +1,12 @@
-.btn-boat-primary {
+.btn-flat {
   color: white;
-  border-radius: 6px;
-  background-color: #119DA4;
-  text-decoration: none;
-  padding: 10px 15px;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
 }
 
-.btn-boat-primary:hover {
-  transition-duration: 0.5s;
-  transition: border-radius;
-  border-radius: 25px;
-  background-color: #19647E;
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
 }

@@ -17,8 +17,8 @@
             <%= cl_image_tag boat.photo.key, alt: "alttext", class: "card-img-top" %>
             <div class="card-body">
               <h5 class="card-title"><%= boat.title %></h5>
-              <p class="card-text"><%= boat.description %></p>
-              <%= link_to "Louer ce bateau", class: "btn btn-primary" %>
+              <%= boat.description.first(120) %><%= "..." %>
+              <%= link_to "Louer ce bateau", root_path, class: "btn btn-flat" %>
             </div>
           </div>
         </div>
