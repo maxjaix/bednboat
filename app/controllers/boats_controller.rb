@@ -1,13 +1,14 @@
 class BoatsController < ApplicationController
-  
+
   def index
     @boats = Boat.all
   end
 
   def show
     @boat = Boat.find(params[:id])
+    @booking = Booking.new
   end
-  
+
   def new
     @boat = Boat.new
   end
@@ -26,5 +27,5 @@ class BoatsController < ApplicationController
   def boat_params
     params.require(:boat).permit(:title, :description, :photo)
   end
-  
+
 end

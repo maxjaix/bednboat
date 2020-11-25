@@ -1,24 +1,37 @@
-
-<div class="container margin-top-negative">
-  <div class="row">
-    <div class="col-8">
-      <div class="boat-show-card">
-        <h1> "Virée sportive en amoureux" </h1>
-        <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
-      </div>
-      <div class="boat-show-card">
-        <h3>+ d'infos sur ce bateau !</h3>
-        <p> Liez l'utile à l'agréable en profitant du paysage tout faisant du sport en amoureux avec coincoin. </p>
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="boat-show-card">
-        <h5>Book this boat!</h5>
-      </div>
-        <div class="flex ml-3">
-          <i class="material-icons mr-2">euro_symbol</i> 55
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <div class="boat-card">
+          <h1><%= @boat.title %></h1>
+          <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
+          <h4>Description :</h4>
+          <p> <%= @boat.description %> </p>
+          <p>Tarif à la journée : <%= @boat.price_per_day.to_i%> €</p>
+          <%= link_to "Retour à la liste des bateaux", boats_path, class: "btn btn-flat" %>
         </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form">
+        <%= simple_form_for [ @boat, @booking ] do |f| %>
+          <div class="form-inputs">
+            <%= f.input :starts_on,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "Date d'embarquement" } %>
+            <%= f.input :ends_on,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "Date de débarquement" } %>
+          </div>
+
+          <div class="form-actions btn-primary text-center">
+            <%= f.button :submit, "Réserver" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
