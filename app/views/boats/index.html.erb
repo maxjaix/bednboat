@@ -11,7 +11,7 @@
             <div class="card-body">
               <h5 class="card-title"><%= boat.title %></h5>
               <p class="card-text, text-justify"><%= boat.description.first(100) %>...</p>
-              <%= link_to "Louer ce bateau", boat_path, class: "btn btn-flat" %>
+              <%= link_to "Louer ce bateau", boat_path(boat), class: "btn btn-flat" %>
             </div>
           </div>
         <%# </div> %>
