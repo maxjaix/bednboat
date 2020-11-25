@@ -1,7 +1,7 @@
   <div class="hero_boat" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.dreamyachtcharter.com/wp-content/uploads/2019/04/bali4-1-ext-av.jpg);">
     <div class="hero_content">
     <h2>Vers l'infini et l'eau du large !</h2>
-    <button type="button" class="btn btn-primary">Louer un bateau !</button>
+    <%= link_to "Louer un bateau", boats_path, class: "btn btn-primary" %>
     </div>
   </div>
 
@@ -18,7 +18,7 @@
             <div class="card-body">
               <h5 class="card-title"><%= boat.title %></h5>
               <%= boat.description.first(120) %><%= "..." %>
-              <%= link_to "Louer ce bateau", root_path, class: "btn btn-flat" %>
+              <%= link_to "Louer ce bateau", boat_path(boat), class: "btn btn-flat" %>
             </div>
           </div>
         </div>
