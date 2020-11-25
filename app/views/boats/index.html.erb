@@ -1,0 +1,25 @@
+<h1>Tous nos bateaux en location</h1>
+
+<div class="content">
+
+  <div class="cards">
+    <%# <div class="row"> %>
+      <% @boats.each do |boat| %>
+        <%# <div class="col-4"> %>
+          <div class="card_index" >
+            <%= cl_image_tag boat.photo.key, alt: "alttext", class: "card-img-top" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= boat.title %></h5>
+              <p class="card-text, text-justify"><%= boat.description.first(100) %>...</p>
+              <%= link_to "Louer ce bateau", boat_path, class: "btn btn-flat" %>
+            </div>
+          </div>
+        <%# </div> %>
+      <% end %>
+    <%# </div> %>
+  </div>
+
+  <div id="map">
+    <%= image_tag("nantes.png", {class: "map-img"}) %>
+  </div>
+</div>

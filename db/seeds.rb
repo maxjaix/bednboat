@@ -12,7 +12,7 @@ lise = User.create!(first_name: "Lise", last_name:"Pluger", email: "lise@gmail.f
 maxime = User.create!(first_name: "Maxime", last_name:"Jourdan", email: "max@gmail.fr", password: "max123")
 ludovic = User.create!(first_name: "Ludovic", last_name:"Villain", email: "ludo@gmail.fr", password: "ludo123")
 caroline = User.create!(first_name: "Caroline", last_name:"des Jamonieres", email: "caro@gmail.fr", password: "caro123")
-
+clementine = User.create!(first_name: "Clémentine", last_name:"Le Cam", email: "clem@gmail.fr", password: "clem123")
 
 #BOATS
 file_hermione = File.open(Rails.root.join("db/fixtures/lhermione.jpg"))

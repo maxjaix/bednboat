@@ -1,0 +1,37 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <div class="boat-card">
+          <h1><%= @boat.title %></h1>
+          <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
+          <h4>Description :</h4>
+          <p> <%= @boat.description %> </p>
+          <p>Tarif à la journée : <%= @boat.price_per_day.to_i%> €</p>
+          <%= link_to "Retour à la liste des bateaux", boats_path, class: "btn btn-flat" %>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form">
+        <%= simple_form_for [ @boat, @booking ] do |f| %>
+          <div class="form-inputs">
+            <%= f.input :starts_on,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "Date d'embarquement" } %>
+            <%= f.input :ends_on,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "Date de débarquement" } %>
+          </div>
+
+          <div class="form-actions btn-primary text-center">
+            <%= f.button :submit, "Réserver" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
