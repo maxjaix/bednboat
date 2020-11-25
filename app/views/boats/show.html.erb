@@ -1,0 +1,24 @@
+
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="boat-show-card">
+        <h1> "Virée sportive en amoureux" </h1>
+        <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+      <div class="boat-show-card">
+        <h3>+ d'infos sur ce bateau !</h3>
+        <p> Liez l'utile à l'agréable en profitant du paysage tout faisant du sport en amoureux avec coincoin. </p>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="boat-show-card">
+        <h5>Book this boat!</h5>
+      </div>
+        <div class="flex ml-3">
+          <i class="material-icons mr-2">euro_symbol</i> 55
+        </div>
+    </div>
+  </div>
+</div>
