@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-    @booking = Boooking.all
+    @booking = Booking.all
   end
 
   def new
@@ -9,7 +9,20 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Boooking.new(booking_params)
-        @booking.save
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.boat = Boat.find(params[:boat_id])
+    enddate = params[:booking]["ends_on"].to_datetime
+    startdate = params[:booking]["starts_on"].to_datetime
+    days = (enddate - startdate).to_i
+    price_per_day = @booking.boat.price_per_day
+    @booking.total_price = days * price_per_day
+    @booking.save
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:starts_on, :ends_on)
   end
 end

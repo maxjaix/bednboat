@@ -24,9 +24,10 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "../plugins/flatpickr"
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { updatePrice } from '../components/_total_booking_price.js';
 
 import { initMapbox } from '../plugins/init_mapbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -35,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+  updatePrice();
 });
