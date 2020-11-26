@@ -6,14 +6,16 @@ Rails.application.routes.draw do
   resources :boats, except: [:edit, :update, :destroy] do
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [:index] do
-    member do
-      patch :accept
-      patch :decline
-    end
-  end
+
+  resources :bookings, only: [:index] #as a renter
+
   namespace :owner do
     resources :boats, only: [:index]
-    resources :bookings, only: [:index]
+    resources :bookings, only: [:index] do #as a owner
+      member do
+        patch :accept
+        patch :decline
+      end
+    end
   end
 end

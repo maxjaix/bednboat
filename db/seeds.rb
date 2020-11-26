@@ -162,3 +162,21 @@ canopee.photo.attach(io: file_canopee, filename: 'canoe.jpg', content_type: 'ima
 puts "creat12"
 sleep 1
 puts "finish boats"
+
+booking1 = Booking.create!(
+  boat: canopee,
+  user: lise,
+  starts_on: Date.today,
+  ends_on: Date.today + 3,
+  status: "pending",
+  total_price: 75,
+)
+
+booking1 = Booking.create!(
+  boat: flipper,
+  user: maxime,
+  starts_on: Date.today + 2,
+  ends_on: Date.today + 5,
+  status: "pending",
+  total_price: 186,
+)
