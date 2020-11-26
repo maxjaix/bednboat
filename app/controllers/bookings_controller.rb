@@ -12,17 +12,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.boat = Boat.find(params[:boat_id])
-
-    start = Time.new(params[:booking]["starts_on(1i)"], params[:booking]["starts_on(2i)"], params[:booking]["starts_on(3i)"]).to_i
-
-    @end = Time.new(params[:booking]["ends_on(1i)"], params[:booking]["ends_on(2i)"], params[:booking]["ends_on(3i)"]).to_i
-
-    days = ((@end - @start) / 60000)
-
+    enddate = params[:booking]["ends_on"].to_datetime
+    startdate = params[:booking]["starts_on"].to_datetime
+    days = (enddate - startdate).to_i
     price_per_day = @booking.boat.price_per_day
     @booking.total_price = days * price_per_day
     @booking.save
-
   end
 
   private
