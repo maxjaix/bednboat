@@ -39,3 +39,7 @@
 .all_boats .card-img-top {
   height: 250px;
 }
+
+.card:hover .card-img-top {
+    opacity: 0.6;
+}
