@@ -1,4 +1,4 @@
-<h1>Tous nos bateaux en location</h1>
+<h2 class="title_index">Tous nos bateaux en location</h2>
 
 <div class="content">
 
@@ -7,11 +7,14 @@
       <% @boats.each do |boat| %>
         <%# <div class="col-4"> %>
           <div class="card_index" >
-            <%= cl_image_tag boat.photo.key, alt: "alttext", class: "card-img-top" %>
+            <%= link_to href: boat_path(boat) do %>
+              <%= cl_image_tag boat.photo.key, alt: "alttext", class: "card-img-top"%>
+            <% end %>
+            <%# <%= link_to "Louer ce bateau", boat_path(boat), class: "btn btn-primary" %>
+            <%# <%= cl_image_tag boat.photo.key, alt: "alttext", class: "card-img-top" %>
             <div class="card-body">
               <h5 class="card-title"><%= boat.title %></h5>
-              <p class="card-text, text-justify"><%= boat.description.first(100) %>...</p>
-              <%= link_to "Louer ce bateau", boat_path(boat), class: "btn btn-flat" %>
+              <p class="card-text, text-justify">A partir de <%= boat.price_per_day.round(0).to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(" ").reverse %>€ par jour</p>
             </div>
           </div>
         <%# </div> %>
