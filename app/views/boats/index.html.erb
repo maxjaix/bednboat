@@ -7,7 +7,7 @@
       <% @boats.each do |boat| %>
         <%# <div class="col-4"> %>
           <div class="card_index" >
-            <%= link_to href: boat_path(boat) do %>
+            <%= link_to boat_path(boat) do %>
               <%= cl_image_tag boat.photo.key, alt: "alttext", class: "card-img-top"%>
             <% end %>
             <%# <%= link_to "Louer ce bateau", boat_path(boat), class: "btn btn-primary" %>

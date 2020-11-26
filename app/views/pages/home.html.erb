@@ -14,7 +14,7 @@
       <% @boats.limit(3).each do |boat| %>
         <div class="col-4">
           <div class="card">
-            <%= link_to href: boat_path(boat) do %>
+            <%= link_to boat_path(boat) do %>
               <%= cl_image_tag boat.photo.key, alt: "alttext", class: "card-img-top"%>
             <% end %>
             <div class="card-body">
