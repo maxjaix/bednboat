@@ -1,7 +1,8 @@
   <div class="hero_boat" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.dreamyachtcharter.com/wp-content/uploads/2019/04/bali4-1-ext-av.jpg);">
     <div class="hero_content">
-    <h2>Vers l'infini et l'eau du large !</h2>
-    <%= link_to "Louer un bateau", boats_path, class: "btn btn-flat" %>
+      <h2>Louer un bateau en trois clics !</h2>
+      <p>Louer un bateau n'a jamais été aussi simple, consectetur adipisicing elit. Ea beatae nemo porro maiores optio quia veritatis nesciunt accusantium, dolores eum consequuntur ab quasi pariatur voluptate corrupti expedita temporibus, dolorem reprehenderit?</p>
+      <%= link_to "Louer un bateau", boats_path, class: "btn btn-flat" %>
     </div>
   </div>
 
@@ -17,7 +18,7 @@
             <div class="card">
               <%= cl_image_tag boat.photo.key, alt: "alttext", class: "card-img-top"%>
               <div class="card-body">
-              <div class="card-rank"><i class="fas fa-anchor"></i><i class="fas fa-anchor"></i><i class="fas fa-anchor"></i><i class="fas fa-anchor"></i></div>
+              <div class="card-rank"><i class="fas fa-anchor"></i><i class="fas fa-anchor"></i><i class="fas fa-anchor"></i><i class="fas fa-anchor grey"></i></div>
               <h5 class="card-title"><%= boat.title %></h5>
               <%= boat.description.first(120) %><%= "..." %>
             </div>
