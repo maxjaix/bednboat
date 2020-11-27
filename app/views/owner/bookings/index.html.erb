@@ -1,56 +1,56 @@
-<h1>Bonjour <%= @owner.first_name %> <%= @owner.last_name %></h2>
+<h2>Bonjour <%= @owner.first_name %> <%= @owner.last_name %></h2>
 
+<div class="container">
 
-<div class="cards">
+<h3>Mes réservations en attente</h3>
+
+<div class="cards-resa">
   <div class="row">
-
-      <h3>Mes réservations en attente</h3>
-      <% @reservations.each do |reservation| %>
-        <%if reservation.status == "pending"%>
-
-          <div class="card_index" >
+    <% @reservations.each do |reservation| %>
+      <%if reservation.status == "pending"%>
+        <div class="col-4">
+          <div class="card-resa" >
             <%= cl_image_tag reservation.boat.photo.key, alt: "alttext", class: "card-img" %>
+            <div class="card-body">
+              <h4><%=reservation.boat.title%></h4>
+              <p class="card-text, text-justify">Réservation du<%=reservation.starts_on.strftime("%d %B %Y")%>au <%=reservation.ends_on.strftime("%d %B %Y")%></p>
+              <p><%= reservation.total_price.round(0).to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(" ").reverse %> €</p>
+              <p>Statut de la réservation : <%= reservation.status%><p>
+              <div class="dropdown">
+                <%= link_to "accepter", accept_owner_booking_path(reservation), method: :patch %>
+                <%= link_to "refuser", decline_owner_booking_path(reservation), method: :patch %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    <%end%>
+  </div>
+
+<div class="container">
+<h3>Mes réservations acceptées</h3>
+
+  <div class="cards-resa">
+    <div class="row">
+      <% @reservations.each do |reservation| %>
+        <%if reservation.status == "accepted" %>
+          <div class="col-4">
+            <div class="card-resa" >
+              <%= cl_image_tag reservation.boat.photo.key, alt: "alttext", class: "card-img" %>
               <div class="card-body">
                 <h4><%=reservation.boat.title%></h4>
-
-
                 <p class="card-text, text-justify">Réservation du<%=reservation.starts_on.strftime("%d %B %Y")%>au <%=reservation.ends_on.strftime("%d %B %Y")%></p>
                 <p><%= reservation.total_price.round(0).to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(" ").reverse %> €</p>
                 <p>Statut de la réservation : <%= reservation.status%><p>
-                <div class="dropdown">
-                  <%= link_to "accepter", accept_owner_booking_path(reservation), method: :patch %>
-                  <%= link_to "refuser", decline_owner_booking_path(reservation), method: :patch %>
-
-                </div>
               </div>
-          </div>
-        <%end%>
+            </div>
+          <%end%>
+        </div>
       <%end%>
-    <h3>Mes réservations acceptées</h3>
-      <% @reservations.each do |reservation| %>
-        <%if reservation.status == "accepted"%>
-
-          <div class="card_index" >
-            <%= cl_image_tag reservation.boat.photo.key, alt: "alttext", class: "card-img" %>
-              <div class="card-body">
-                <h4><%=reservation.boat.title%></h4>
-
-
-                <p class="card-text, text-justify">Réservation du<%=reservation.starts_on.strftime("%d %B %Y")%>au <%=reservation.ends_on.strftime("%d %B %Y")%></p>
-                <p><%= reservation.total_price.round(0).to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(" ").reverse %> €</p>
-                <p>Statut de la réservation : <%= reservation.status%><p>
-
-              </div>
-          </div>
-        <%end%>
-      <%end%>
+    </div>
   </div>
 </div>
-
-
-
-
-
+</div>
 
 <%# <div class="row">
 
