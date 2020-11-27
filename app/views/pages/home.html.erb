@@ -11,17 +11,18 @@
 
   <div class="all_boats">
     <div class="row">
-      <% @boats.limit(3).each do |boat| %>
+      <% @boats.limit(6).each do |boat| %>
         <div class="col-4">
-          <div class="card">
-            <%= link_to boat_path(boat) do %>
+          <%= link_to boat_path(boat) do %>
+            <div class="card">
               <%= cl_image_tag boat.photo.key, alt: "alttext", class: "card-img-top"%>
-            <% end %>
-            <div class="card-body">
+              <div class="card-body">
+              <div class="card-rank"><i class="fas fa-anchor"></i><i class="fas fa-anchor"></i><i class="fas fa-anchor"></i><i class="fas fa-anchor"></i></div>
               <h5 class="card-title"><%= boat.title %></h5>
               <%= boat.description.first(120) %><%= "..." %>
             </div>
-          </div>
+          <% end %>
+            </div>
         </div>
       <% end %>
     </div>
