@@ -1,23 +1,19 @@
 <div class="container">
-  <h2>Add a new boat</h2>
+
+  <div class="title-new">
+    <h2><strong>Louer votre Bateau c'est facile</strong></h2>
+    <h5 class="mb-4">Remplissez tout simplement ce formulaire</h5>
+  </div>
 
   <%= simple_form_for [ @user, @boat ] do |f| %>
-
-    <div class="form-inputs">
-      <%= f.input :title,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "first name" } %>
-      <%= f.input :description,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "last name" } %>
-      <%= f.input :photo, as: :file %> 
-    </div>
-
+    <%= f.input :title, label: "Titre de votre annonce", placeholder: " Désiré le bateau qui ne vous ferra pas ramer" %>
+    <%= f.input :description, label: "Description de votre bateau", placeholder: "Taille du bateau, nombre de couchages, les plus" %>
+    <%= f.input :price_per_day, label: "Prix par jour à la location", placeholder: "150" %>
+    <%= f.input :address, label: "Adresse de votre bateau", placeholder: "Belle-Île-en-Mer" %>
+    <%= f.input :photo, as: :file %>
     <div class="form-actions">
-      <%= f.button :submit, "Submit a new boat" %>
+      <%= f.button :submit, "Ajouter un nouveau bateau", class: "btn btn-primary" %>
     </div>
   <% end %>
- </div>
 
+ </div>
