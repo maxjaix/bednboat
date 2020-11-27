@@ -1,0 +1,16 @@
+<h2>Bonjour <%= @renter.first_name %> <%= @renter.last_name %></h2>
+
+<h1>Mes Réservations </h1>
+<div class="cards">
+    <% @bookings.each do |booking| %>
+      <div class="card_index" >
+        <br>
+        <h5><strong><%= booking.boat.title %></strong></h5>
+        <p>Réservation du <%= booking.starts_on.strftime("%d %B %Y") %> au <%= booking.ends_on.strftime("%d %B %Y") %></p>
+        <p><strong>Prix total: </strong><%= booking.total_price.round(0).to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(" ").reverse %> €</p>
+        <p><strong>Statut: </strong><%= booking.status %></p>
+        <%= cl_image_tag booking.boat.photo.key, alt: "alttext", class: "card-img-top"%>
+      </div>
+    <% end %>
+  </ul>
+</div>

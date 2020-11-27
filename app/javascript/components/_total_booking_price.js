@@ -9,13 +9,15 @@ const updatePrice = () => {
 
   console.log("test")
 
-  end.addEventListener('change', () => {
+  if (end) {
+    end.addEventListener('change', () => {
 
-    const price = parseInt(form.dataset.price)
-    const days = ((Date.parse(end.value) - Date.parse(start.value)) / (60000 * 24 * 60))
-    const totalPrice = price * days
-    showprice.innerText = `Prix de votre séjour à bord ${totalPrice} €`
-  })
+      const price = parseInt(form.dataset.price)
+      const days = ((Date.parse(end.value) - Date.parse(start.value)) / (60000 * 24 * 60))
+      const totalPrice = price * days
+      showprice.innerText = `Prix de votre séjour à bord ${totalPrice} €`
+    })
+  }
 }
 
 export { updatePrice }
