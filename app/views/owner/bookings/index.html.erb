@@ -1,3 +1,61 @@
-<h1>Bonjour <%= @current_user.first_name %> <%= @current_user.last_name %></h2>
+<h1>Bonjour <%= @owner.first_name %> <%= @owner.last_name %></h2>
 
 <h3>Mes bateaux réservés</h3>
+<div class="cards">
+  <div class="row">
+    <% @reservations.each do |reservation| %>
+
+        <div class="card_index" >
+          <%= cl_image_tag reservation.boat.photo.key, alt: "alttext", class: "card-img" %>
+            <div class="card-body">
+              <h4><%=reservation.boat.title%></h4>
+
+
+              <p class="card-text, text-justify">Réservation du<%=reservation.starts_on.strftime("%d %B %Y")%>au <%=reservation.ends_on.strftime("%d %B %Y")%></p>
+              <p><%= reservation.total_price.round(0).to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(" ").reverse %> €</p>
+              <p>Statut de la réservation :<p>
+              <div class="dropdown">
+                <%= link_to "accepter", accept_owner_booking_path(reservation), method: :patch %>
+                <%= link_to "refuser", decline_owner_booking_path(reservation), method: :patch %>
+
+              </div>
+            </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
+
+
+
+<%# <div class="row">
+
+      <div class="card_index" >
+        <img src="../db/fixtures/catamaran.jpg" alt="">
+        <div class="card-body">
+          <h5>La petite barque Titanic</h5>
+          <p class="card-text, text-justify">Bateau réservé par Jean <br> Du 16 au 17 Décembre</p>
+          <p class = "btn btn-success ">Acceptée</p>
+        </div>
+      </div>
+    </div>
+  <div class="col-4">
+    <div class="card_index" >
+      <img src="../../assets/images/barque.jpg" alt="">
+      <div class="card-body">
+        <h5>La petite barque Titanic</h5>
+        <p class="card-text, text-justify">Bateau réservé par Marie <br> Du 15 au 20 Février</p>
+        <p class = "btn btn-danger">Refusée</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card_index" >
+      <img src="../../assets/images/barque.jpg" alt="">
+      <div class="card-body">
+        <h5>La petite barque Titanic</h5>
+        <p class="card-text, text-justify">Bateau réservé par Marie <br> Du 15 au 20 Février</p>
+        <p class = "btn btn-success">Acceptée</p>
+      </div>
+    </div>
+  </div> %>
