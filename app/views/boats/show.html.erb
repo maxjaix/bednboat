@@ -4,12 +4,15 @@
       <div class="col-8">
         <div class="boat-card">
           <h1><%= @boat.title %></h1>
-          <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
-
+          <br>
+          <%= cl_image_tag @boat.photo.key, height: 500, crop: :fill %>
+          <br>
+          <br>
           <p> <%= @boat.description %> </p>
-          <p>Tarif à la journée : <%= @boat.price_per_day.to_i%> €</p>
+          <p><strong>Adresse du bateau :</strong> <%= @boat.address %> </p>
+          <p><strong>Tarif à la journée :</strong> <%= @boat.price_per_day.to_i%> €</p>
         </div>
-        <%= link_to "Retour à la liste des bateaux", boats_path %>
+
       </div>
 
       <div class="col-4">
@@ -17,11 +20,13 @@
         <%= simple_form_for [ @boat, @booking ] do |f| %>
           <div id="booking_form" class="form-inputs" data-price="<%= @boat.price_per_day %>">
             <%= f.input :starts_on,
+                        label: "Date d'embarquement",
                         as: :string,
                         required: true,
                         autofocus: true,
                         input_html: { class: "datepicker" } %>
             <%= f.input :ends_on,
+                        label: "Date de débarquement",
                         as: :string,
                         required: true,
                         autofocus: true,
