@@ -1,0 +1,30 @@
+.cards-resa {
+  margin: 20px 0;
+}
+
+.card-resa {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 430px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.card-resa .card-img-top {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-resa-boy {
+  padding: 15px;
+}
+
+.cards-resa .row {
+  height: 450px;
+}
+
+.subtitle-resa {
+  margin-top: 40px;
+}

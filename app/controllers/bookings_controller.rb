@@ -18,7 +18,12 @@ class BookingsController < ApplicationController
     days = (enddate - startdate).to_i
     price_per_day = @booking.boat.price_per_day
     @booking.total_price = days * price_per_day
-    @booking.save
+
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render "new"
+    end
   end
 
   private
