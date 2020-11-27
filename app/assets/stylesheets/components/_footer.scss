@@ -1,6 +1,6 @@
 .footer {
   margin-top: 40px;
-  background: #b4dee3;
+  background: #02C3BD;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,8 +14,8 @@
   align-items: center;
 }
 .footer-links a {
-  color: black;
-  opacity: 0.15;
+  color: #CAF7E2;
+  opacity: 0.5;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -25,5 +25,6 @@
 }
 
 .footer h3 {
+  color: #CAF7E2;
   text-align: center;
 }

@@ -4,16 +4,21 @@
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 500px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
   margin-bottom: 30px;
 }
 
 .hero_boat h2 {
-  font-size: 60px;
+  font-size: 50px;
+  color: white;
+}
+
+.hero_content {
+  margin-left: 250px;
+  width: 30%;
   color: white;
 }
 
@@ -23,17 +28,40 @@
 }
 
 .all_boats .card {
-  height: 500px;
+  height: 480px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  border: none;
+}
+
+.all_boats .card {
+  margin: 15px 0;
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
+}
+
+.card:hover {
+  transition: box-shadow 0.2s ease-in, transform 0.2s ease-in;;
+  text-decoration: none;
+  box-shadow: 0 9px 10px rgba(0,0,0,.1);
+  transform: translateY(-9px);
 }
 
 .all_boats .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.all_boats .card-title {
+  font-weight: bolder;
 }
 
 .all_boats .card-text {
-  border-color: lightgray;
+  color: lightgray;
 }
 
 .all_boats .card-img-top {
@@ -42,4 +70,14 @@
 
 .card:hover .card-img-top {
     opacity: 0.6;
+}
+
+.card-rank {
+  margin-top: 0;
+  margin-bottom: 10px;
+  height: 20px;
+  color: gold;
+}
+.fa-anchor {
+  padding: 0 2px;
 }
