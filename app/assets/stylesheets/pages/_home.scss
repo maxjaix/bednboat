@@ -23,7 +23,17 @@
 }
 
 .all_boats .card {
-  height: 500px;
+  height: 480px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  border: none;
+}
+
+.card:hover {
+  transition: box-shadow 0.2s ease-in, transform 0.2s ease-in;;
+  text-decoration: none;
+  box-shadow: 0 9px 10px rgba(0,0,0,.2);
+  transform: translateY(-9px);
 }
 
 .all_boats .card-body {
@@ -32,8 +42,12 @@
   justify-content: space-around;
 }
 
+.all_boats .card-title {
+  font-weight: bolder;
+}
+
 .all_boats .card-text {
-  border-color: lightgray;
+  color: lightgray;
 }
 
 .all_boats .card-img-top {
