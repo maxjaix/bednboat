@@ -6,7 +6,8 @@
     <% @boats.each do |boat| %>
       <div class="card_index" >
         <%= link_to boat_path(boat) do %>
-          <%= cl_image_tag boat.photo.key, alt: "alttext", class: "card-img-top"%>
+        <div class="card-img-top" style="background-image: url(' <%= cl_image_path(boat.photo.key, alt: "photo du bateau") %> ')">
+          </div>
             <div class="card-body">
               <div class="card-rank"><i class="fas fa-anchor"></i><i class="fas fa-anchor"></i><i class="fas fa-anchor"></i><i class="fas fa-anchor grey"></i></div>
               <h5 class="card-title"><%= boat.title %></h5>

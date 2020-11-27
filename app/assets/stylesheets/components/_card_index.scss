@@ -6,7 +6,6 @@
 .content {
   display: flex;
   justify-content: flex-start;
-  // flex-direction: column;
 }
 
 .cards {
@@ -28,8 +27,9 @@
 }
 
 .card_index .card-img-top {
-  background-size: cover;
   height: 200px;
+  background-size: cover;
+  background-position: center;
 }
 
 .card_index:hover .card-img-top {
@@ -49,8 +49,6 @@
 }
 
 #map {
-  // width: 50%;
-  // flex-grow: 2;
   margin-top: 18px;
   margin-bottom: 18px;
   height: 100vh;
@@ -60,13 +58,8 @@
 
 .map-img {
   width: 100%;
-  // flex-grow: 2;
   height: auto;
 }
-
-// .cards .card_index {
-//   height: 500px;
-// }
 
 .cards .card-body {
   display: flex;
